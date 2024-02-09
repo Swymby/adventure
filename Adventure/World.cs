@@ -9,11 +9,20 @@ namespace Adventure
 {
     public class World
     {
+        public List<BaseRoom> rooms = new();
         public BaseRoom CurrentRoom { get; private set; }
 
         public World() 
         {
-            CurrentRoom = new Lobby();
+            var lobby = new Lobby();
+            var corridor = new Corridor();
+
+            lobby.RegisterNeighbour(corridor);
+
+
+            rooms.AddRange(new BaseRoom[] { lobby, corridor });
+
+            CurrentRoom = rooms[0];
         }
 
         public string Intro { get; } = @"
