@@ -8,7 +8,7 @@ namespace Adventure.Items
 {
     public class Rock : BaseItem
     {
-        public override string Name => "Rock";
+        public override string Name => "rock";
 
         public override string Description => "Very dull, very heavy rock";
     }

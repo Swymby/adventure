@@ -10,5 +10,6 @@ namespace Adventure.Items
     {
         public abstract string Name { get; }
         public abstract string Description { get; }
+        public virtual bool IsPickable { get; } = false;
     }
 }

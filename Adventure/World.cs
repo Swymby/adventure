@@ -1,4 +1,5 @@
-﻿using Adventure.Rooms;
+﻿using Adventure.Character;
+using Adventure.Rooms;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +10,10 @@ namespace Adventure
 {
     public class World
     {
-        public List<BaseRoom> rooms = [];
+        private readonly List<BaseRoom> rooms = [];
         public BaseRoom CurrentRoom { get; private set; }
+
+        public Inventory Inventory { get; init; } = new Inventory();
 
         public World() 
         {

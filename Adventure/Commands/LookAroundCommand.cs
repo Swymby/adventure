@@ -11,7 +11,17 @@ namespace Adventure.Commands
     {
         public override void Execute(World world, params string[] @params)
         {
-            Console.WriteLine($"You looked around and see a {world.CurrentRoom.Description}");
+            Console.WriteLine($"You looked around and see a {world.CurrentRoom.Description}.");
+
+            if (world.CurrentRoom.Items.Count > 0)
+            {
+                Console.Write($"You also see ");
+                
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine($"{string.Join(", ", world.CurrentRoom.Items.Select(i => i.Name))}");
+                Console.ResetColor();
+
+            }
         }
     }
 }
